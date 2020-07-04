@@ -13,8 +13,7 @@ function pyramid(n) {
       }
     }
     console.log(level)
-  }
-}
+  }Plugin.;0o00-lł
 
 module.exports = pyramid;
 
