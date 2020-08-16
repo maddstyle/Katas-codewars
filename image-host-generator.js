@@ -9,3 +9,10 @@
 // You can call it like so to make sure the name is unique
 
 const generateName = () => photoManager.nameExists(n = (Math.random() + 1).toString(36).substr(2, 6)) ? generateName() : n
+
+// or
+
+const generateName = () =>
+  Math.random()
+    .toString(36)
+    .slice(2,8)
