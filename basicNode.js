@@ -36,6 +36,30 @@
 
 // Here we want to check if our next node is instanceof node or null. and we want to prevent any other data types to be passed as an argument to the node. We want to allow null as an argument, because it breaks link between the node and its next node.
 
+// class Node {
+//   constructor(data) {
+//     this.data = data;
+//     this.next = null;
+//   }
+
+//   setNextNode(node) {
+//     if (node instanceof Node || node === null) {
+//        this.next = node;
+//     } else {
+//       throw new Error('This is not a node.');
+//     }
+//   }
+// }
+
+// const firstNode = new Node('I am an instance of a Node!');
+
+// firstNode.setNextNode(15)
+
+// module.exports = Node;
+// --------------------------------------------------------------------
+// getter method used to handle preprocessing
+
+
 class Node {
   constructor(data) {
     this.data = data;
@@ -44,15 +68,21 @@ class Node {
 
   setNextNode(node) {
     if (node instanceof Node || node === null) {
-       this.next = node;
+      this.next = node;
     } else {
-      throw new Error('This is not a node.');
+      throw new Error('Next node must be a member of the Node class.');
     }
+  }
+  
+  getNextNode() {
+    return this.next;
   }
 }
 
 const firstNode = new Node('I am an instance of a Node!');
+const secondNode = new Node('I am the next Node!');
+firstNode.setNextNode(secondNode);
 
-firstNode.setNextNode(15)
+console.log(firstNode.getNextNode());
 
 module.exports = Node;
