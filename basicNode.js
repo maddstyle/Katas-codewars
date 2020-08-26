@@ -8,7 +8,7 @@
 // Underneath the node we previously created, use console.log() to print out the instance’s next node property. Check that null is output in the terminal.
 
 // 
-
+// --------------------------------------------------------------------
 // In this exercise we need to implement .setNextNode() method in the Node class, so our next node can be updated from initial null value and used in more complex data structures. 
 
 // 1. implement .setNextNode on Node class. it should take node as an argument and update property next to an appropriate value.Node
@@ -17,20 +17,42 @@
 
 // console.log the firstNode to see it completed.
 
+// class Node {
+//   constructor(data) {
+//     this.data = data;
+//     this.next = null;
+//   }
+//   setNextNode(node) {
+//     this.next = node;
+//   }
+// }
+
+// const firstNode = new Node('I am the first instance.');
+// const secondNode = new Node('I am the second instance');
+
+// firstNode.setNextNode(secondNode);
+// console.log(firstNode);
+// -------------------------------------------------------------------
+
+// Here we want to check if our next node is instanceof node or null. and we want to prevent any other data types to be passed as an argument to the node. We want to allow null as an argument, because it breaks link between the node and its next node.
+
 class Node {
   constructor(data) {
     this.data = data;
     this.next = null;
   }
+
   setNextNode(node) {
-    this.next = node;
+    if (node instanceof Node || node === null) {
+       this.next = node;
+    } else {
+      throw new Error('This is not a node.');
+    }
   }
 }
 
-const firstNode = new Node('I am the first instance.');
-const secondNode = new Node('I am the second instance');
+const firstNode = new Node('I am an instance of a Node!');
 
-firstNode.setNextNode(secondNode);
-console.log(firstNode);
+firstNode.setNextNode(15)
 
 module.exports = Node;
