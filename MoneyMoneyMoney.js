@@ -32,27 +32,27 @@ Assumptions : Assume that Desired Principal 'D' is always greater than the initi
 
 */
 
-function calculateYears(principal, interest, tax, desired){
-  debugger;
-  //console.log(principal + (principal*interest) - ((principal*interest)*tax));
-  var years = 0;
-  if(principal === desired){
-    years = 0;
-  }
-  var start = principal;
-  while(start < desired){
-    var calcInt = start * interest;
-    var calcTax = calcInt * tax
-    var sum = start + calcInt - calcTax;
-    start === sum;
-    start += calcInt - calcTax;
-    years++;
+// function calculateYears(principal, interest, tax, desired){
+//   debugger;
+//   //console.log(principal + (principal*interest) - ((principal*interest)*tax));
+//   var years = 0;
+//   if(principal === desired){
+//     years = 0;
+//   }
+//   var start = principal;
+//   while(start < desired){
+//     var calcInt = start * interest;
+//     var calcTax = calcInt * tax
+//     var sum = start + calcInt - calcTax;
+//     start === sum;
+//     start += calcInt - calcTax;
+//     years++;
   
-    }
-  return years;
-}
+//     }
+//   return years;
+// }
 
-calculateYears(1000, 0.05, 0.18, 1100);
+// calculateYears(1000, 0.05, 0.18, 1100);
 // 3
 //keep this stuff in mind. i way over complicated my code. keep formulas in mind. simplification.
 
@@ -64,8 +64,8 @@ calculateYears(1000, 0.05, 0.18, 1100);
 
 
 
-/*
-CODEWARS GOOD SOLUTION
+
+// CODEWARS GOOD SOLUTION
 
 function calculateYears(principal, interest, tax, desired) {
     // your code
@@ -78,7 +78,7 @@ function calculateYears(principal, interest, tax, desired) {
 }
 
 calculateYears(1000, 0.05, 0.18, 1100);
-// 3
+
 
 
 
@@ -94,4 +94,3 @@ Test.it("Basic tests",function() {
     testing(calculateYears(1000,0.01625,0.18,1200), 14)
     testing(calculateYears(1000,0.05,0.18,1000), 0)
 })})
-*/
