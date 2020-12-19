@@ -1,13 +1,15 @@
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.css">
-  <title>Animate.css Sandbox</title>
-  <!-- if you uncoment this it will override the inline styles applied lower -->
-  <!-- <style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.compat.css">
+	<title>Animate.css Sandbox</title>
+	<!-- if you uncoment this it will override the inline styles applied lower -->
+	<!-- <style>
     #section-1{
       animation-delay: 1s;
       animation-duration: 1s;
@@ -18,19 +20,58 @@
     }
   </style> -->
 </head>
+
 <body>
-  <div class="container">
-    <header class="animated slideInDown text-center bg-primary text-white p-5 my-2">Animate.css Sandbox</header>
-      <section id="section-1" style="animation-duration: 3s" class="animated slideInLeft bg-light p-5 my-3">
-        <h1>Section One</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae animi nobis ducimus voluptates molestias numquam quis voluptate vel soluta minima, libero in culpa praesentium alias debitis repellat sunt. Voluptates qui magni voluptatum tempore accusamus! Labore asperiores sunt at. Reprehenderit, soluta!</p>
-      </section>
+	<div class="container">
+		<header class="animated slideInDown text-center bg-primary text-white p-5 my-2">Animate.css Sandbox</header>
+		<section id="section-1" style="animation-duration: 3s" class="animated slideInLeft bg-light p-5 my-3">
+			<h1>Section One</h1>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae animi nobis ducimus voluptates
+				molestias numquam quis voluptate vel soluta minima, libero in culpa praesentium alias debitis repellat sunt.
+        Voluptates qui magni voluptatum tempore accusamus! Labore asperiores sunt at. Reprehenderit, soluta!</p>
+		</section>
 
-      <section id="section-2" style="animation-delay: 3s" class="animated slideInRight bg-light p-5 my-3">
-        <h1>Section Two</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae animi nobis ducimus voluptates molestias numquam quis voluptate vel soluta minima, libero in culpa praesentium alias debitis repellat sunt. Voluptates qui magni voluptatum tempore accusamus! Labore asperiores sunt at. Reprehenderit, soluta!</p>
-      </section>
-  </div>
+		<section id="section-2"  style="animation-delay: 3s" class="animated slideInRight bg-light p-5 my-3">
+			<h1 id="anim-head">Section Two</h1>
+			<p id="anim-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae animi nobis ducimus voluptates molestias numquam
+				quis voluptate vel soluta minima, libero in culpa praesentium alias debitis repellat sunt. Voluptates qui magni
+				voluptatum tempore accusamus! Labore asperiores sunt at. Reprehenderit, soluta!</p>
+        <button id="animateBtn" class="btn btn-primary">Animate</button>
+        <button id="animateBtn2" class="btn btn-primary">Animate2</button>
+		</section>
+	</div>
+  <!-- adding jquery cdn link from cdnjs.com, so we can use js here -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <!-- this will add js into our html file -->
+	<script>
+		$(function() {
+      //after clicking button h1 and p animation will be applied 
+			$('#animateBtn').click(function() {
+				animate('#anim-head', 'bounce');
+        animate('#anim-body', 'rubberBand');
+				return false;
+      });
+      
+      //header will come down and ...
+      $('#animateBtn2').click(function() {
+        animate('header', 'slideOutUp');
+        //... when the second botton is clicked the header will go up and stay hidden
+        setTimeout(function(){
+          $('header').css('visibility', 'hidden');
+        }, 1000);
+				return false;
+			});
+
+			//Animate
+			function animate(element, animation) {
+				$(element).addClass('animated ' + animation);
+				let wait = setTimeout(function() {
+					$(element).removeClass('animated ' + animation);
+				}, 1000);
+			}
+		});
+  </script>
+  
 </body>
-</html>
 
+</html>
