@@ -1,0 +1,149 @@
+/*--------------------------------------------------------------
+# Featured Work & Portfolio Pages
+--------------------------------------------------------------*/
+
+.featured-work {
+	background: #083055;
+	background-size: cover;
+	background-position: center;
+}
+
+.featured-work h1 {
+	text-align: center;
+	font-size: 26px;
+}
+
+.featured-work-content {
+	overflow: hidden;
+}
+
+.individual-featured-work {
+	width: 32%;
+	float: left;
+	margin-left: 10px;
+	/* border: 5px solid white;
+	border-radius: 20px; */
+}
+
+.featured-work-button {
+	clear: both;
+	text-align: center;
+	margin-top: 50px;
+}
+
+.hovereffect {
+	width: 100%;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+	cursor: default;
+}
+
+.hovereffect .overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out
+}
+
+.hovereffect img {
+	display: block;
+	position: relative;
+	-webkit-transition: all .4s linear;
+	transition: all .4s linear;
+}
+
+.hovereffect h1 {
+	color: #fff;
+}
+
+.hovereffect:hover img {
+	-ms-transform: scale(1.2);
+	-webkit-transform: scale(1.2);
+	transform: scale(1.2);
+}
+
+.hovereffect:hover .overlay {
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+
+.portfolio-content {
+	width: 31%;
+	text-align: center;
+	float: right;
+	padding: 5px;
+	margin: 30px 20px 0 0;
+	box-shadow: 0 0 10px 3px rgba(0, 0, 3, .2);
+}
+
+
+/* .portfolio-content .custom-logo {
+	box-shadow: none
+} */
+
+.portfolio-content-button .button a {
+	margin-top: 50px;
+	background: #fd3552;
+	color: #fff;
+	text-decoration: none;
+	padding: 14px 30px;
+	text-transform: uppercase;
+	font-weight: 900;
+	letter-spacing: 4px;
+	font-size: 15px;
+	margin-left: 80px;
+	/* border: 2px solid #d5455d; */
+}
+
+.portfolio-content-button:hover {
+	background: #fff;
+	color: #d5455d;
+	/* border: 2px solid #d5455d; */
+}
+
+.post-type-archive-portfolio #above-footer,
+.single-portfolio #above-footer {
+	margin-top: 100px;
+}
+
+.portfolio-content-text{
+	text-align: left;
+	margin-bottom: 60px;
+	font-size: 20px;
+}
+
+.portfolio-content-text a {
+	color: #0000EE;
+}
+
+.portfolio-content-text p {
+	margin-bottom: 50px;
+}
+
+.portfolio-content-text h3 {
+	width: 80%;
+	margin: 30px auto;
+}
+
+.portfolio-content img {
+	margin-bottom: 20px;
+}
+
+.portfolio-content a {
+	color: #808080;
+}
+
+.portfolio-content-button a {
+ color: white;
+ margin-left: 5px;
+ width: 80%;
+}
