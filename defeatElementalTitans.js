@@ -14,4 +14,4 @@ function titanAttack(att, def, yourElement, theirElement){
   let strongElement = {Fire: 'Earth', Earth: 'Thunder', Water: 'Fire', Thunder: 'Water'};
   let weakElement = {Fire: 'Water', Earth: 'Fire', Water: 'Thunder', Thunder: 'Earth'};
   let damage = def - att * (strongElement[yourElement] === theirElement ? 1.5 : yourElement === theirElement || weakElement[yourElement] === theirElement ? 0.5 : 1);
-  return [damage, damage > 0 ? 'Run!' : 'Attack'];
+  return [damage, damage > 0 ? 'Run!' : 'Attack']
